@@ -4,6 +4,7 @@ import './App.css'
 import People from './components/Card'
 import PeopleRandom from './components/CardRandom'
 import MenuBar from './components/Menu'
+import PeopleSort from './components/CardSort'
 
 export default class App extends Component {
   render() {
@@ -17,6 +18,9 @@ export default class App extends Component {
         </Grid.Column>
         <Grid.Column>
           <PeopleRandom />
+        </Grid.Column>
+        <Grid.Column>
+          <PeopleSort />
         </Grid.Column>
       </Grid>
     )

@@ -1,46 +1,37 @@
 import React, { Component } from 'react'
 import {Grid, Card, Image, Menu, Header} from 'semantic-ui-react'
-import DATA from '../data/data'
+import DATA from '../data/dataSort'
 
-export default class CardRandom extends Component {
-  state = {
-    people : []
-  }
-  componentDidMount(){
-    setInterval(() =>
-      this.setState({
-        people: DATA[Math.floor(Math.random() * DATA.length)]
-      }), 3000
-    )
-  }
-
+export default class CardSort extends Component {
   render(){
-    let {people} = this.state
-    return (
-    <div>
-    <Menu color='blue' secondary inverted fluid>
-      <Menu.Menu position='left'>
-        <Menu.Item>
-          <Header size='large'>Load Random</Header>
-        </Menu.Item>
-      </Menu.Menu>
-    </Menu>
-    <Grid centered columns={5} padded>
-      <Grid.Column key={people.id}>
-        <Card color='blue' fluid>
-          <Image src={people.thumbnailUrl} fluid/>
-          <Card.Content textAlign='center'>
-            <Card.Header>
-              {people.name}
-            </Card.Header>
-            <Card.Meta>
-              {people.jobs}
-            </Card.Meta>
-          </Card.Content>
-        </Card>
-      </Grid.Column>
-    </Grid>
-    </div>
+    console.log(DATA)
+    return(
+      <div>
+      <Menu color='blue' secondary inverted fluid>
+        <Menu.Menu position='left'>
+          <Menu.Item>
+            <Header size='large'>People Data Sort</Header>
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
+      <Grid centered columns={5} padded>
+        {DATA.map(DATA =>
+        <Grid.Column key={DATA.id}>
+          <Card color='blue' fluid>
+            <Image src={DATA.thumbnailUrl} fluid/>
+            <Card.Content textAlign='center'>
+              <Card.Header>
+                {DATA.name}
+              </Card.Header>
+              <Card.Meta>
+                {DATA.jobs}
+              </Card.Meta>
+            </Card.Content>
+          </Card>
+        </Grid.Column>
+        )}
+      </Grid>
+      </div>
     )
   }
 }
