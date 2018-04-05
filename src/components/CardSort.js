@@ -4,7 +4,6 @@ import DATA from '../data/dataSort'
 
 export default class CardSort extends Component {
   render(){
-    console.log(DATA)
     return(
       <div>
       <Menu color='blue' secondary inverted fluid>

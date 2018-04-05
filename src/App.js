@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-import './App.css'
 import People from './components/Card'
 import PeopleRandom from './components/CardRandom'
 import MenuBar from './components/Menu'
