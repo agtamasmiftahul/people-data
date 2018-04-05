@@ -6,7 +6,7 @@ const CardPeople = () => {
   return (
   <Grid centered columns={5} padded>
     {DATA.map(DATA =>
-    <Grid.Column>
+    <Grid.Column key={DATA.id}>
       <Card color='blue' fluid>
         <Image src={DATA.thumbnailUrl} fluid/>
         <Card.Content textAlign='center'>
